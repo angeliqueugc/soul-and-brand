@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A personal creative portfolio — editorial, intimate, cinematic." />
+  <title>Portfolio — A Creative Archive</title>
+
+  <!-- ============================================================
+       FONT IMPORTS
+       Three intentional voices:
+         · Fraunces      — a soft, vintage display serif (elegance + editorial punch)
+         · Caveat        — natural handwriting (personality, scrapbook diary)
+         · Work Sans     — clean humanist sans (body / interface)
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Caveat:wght@400..700&family=Work+Sans:ital,wght@0,300..600;1,300..500&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+       Warm vintage film × Y2K nostalgia.
+       Cream, deep burgundy, dark warm brown, vintage gold.
+       ============================================================ */
+    :root {
+      /* — Core palette — */
+      --cream:      #f0ebe1;  /* paper / background            */
+      --burgundy:   #8e1e1a;  /* deep red — primary accent     */
+      --brown:      #4a2e28;  /* dark warm brown — text/ink     */
+      --gold:       #b8893a;  /* vintage gold — highlights      */
+
+      /* — Extended / derived tones — */
+      --cream-deep: #e6ded0;  /* slightly sunk paper            */
+      --cream-soft: #f7f3ec;  /* raised paper / cards           */
+      --burgundy-dark: #6d1613;
+      --gold-soft:  #d8b06a;
+      --ink:        #2a1a16;  /* near-black warm — headings     */
+      --ink-muted:  #6b544c;  /* secondary text                 */
+      --line:       rgba(74, 46, 40, 0.16); /* hairline rules   */
+
+      /* — Semantic roles — */
+      --bg:            var(--cream);
+      --surface:       var(--cream-soft);
+      --text:          var(--brown);
+      --text-strong:   var(--ink);
+      --text-muted:    var(--ink-muted);
+      --accent:        var(--burgundy);
+      --accent-2:      var(--gold);
+
+      /* — Typography families — */
+      --font-serif:  "Fraunces", Georgia, "Times New Roman", serif;
+      --font-script: "Caveat", "Segoe Script", cursive;
+      --font-sans:   "Work Sans", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+
+      /* — Fluid type scale (clamp: min, preferred, max) — */
+      --step--1: clamp(0.82rem, 0.78rem + 0.2vw, 0.94rem);   /* small caps / labels */
+      --step-0:  clamp(1rem, 0.95rem + 0.3vw, 1.15rem);      /* body                */
+      --step-1:  clamp(1.3rem, 1.1rem + 0.9vw, 1.9rem);      /* lead / large body   */
+      --step-2:  clamp(1.8rem, 1.3rem + 2.2vw, 3rem);        /* sub-headings        */
+      --step-3:  clamp(2.6rem, 1.6rem + 4.6vw, 5.5rem);      /* section titles      */
+      --step-4:  clamp(3.4rem, 1.4rem + 9vw, 9rem);          /* hero display        */
+
+      /* — Spacing scale — */
+      --space-2xs: clamp(0.5rem, 0.4rem + 0.4vw, 0.75rem);
+      --space-xs:  clamp(0.75rem, 0.6rem + 0.6vw, 1.1rem);
+      --space-s:   clamp(1rem, 0.8rem + 0.9vw, 1.6rem);
+      --space-m:   clamp(1.6rem, 1.2rem + 1.8vw, 2.8rem);
+      --space-l:   clamp(2.6rem, 1.8rem + 3.4vw, 4.6rem);
+      --space-xl:  clamp(4rem, 2.6rem + 6vw, 8rem);
+      --space-2xl: clamp(6rem, 3.6rem + 10vw, 12rem);
+
+      /* — Structure — */
+      --container: 1180px;
+      --container-narrow: 760px;
+      --radius-s: 4px;
+      --radius-m: 10px;
+      --radius-l: 20px;
+
+      /* — Motion — */
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --dur:  0.6s;
+
+      /* — Elevation (warm, low-contrast shadows) — */
+      --shadow-s: 0 2px 10px rgba(42, 26, 22, 0.08);
+      --shadow-m: 0 14px 40px rgba(42, 26, 22, 0.14);
+    }
+
+    /* ============================================================
+       RESET
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      min-height: 100dvh;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: var(--step-0);
+      font-weight: 400;
+      line-height: 1.65;
+      letter-spacing: 0.005em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    img, picture, svg, video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    button, input, textarea, select { font: inherit; color: inherit; }
+
+    /* ============================================================
+       TYPOGRAPHY
+       ============================================================ */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      color: var(--text-strong);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+      text-wrap: balance;
+    }
+    h1 { font-size: var(--step-4); }
+    h2 { font-size: var(--step-3); }
+    h3 { font-size: var(--step-2); }
+    h4 { font-size: var(--step-1); }
+
+    p { max-width: 60ch; }
+
+    /* Reusable text flourishes (the "voice" of the design) */
+    .u-script {
+      font-family: var(--font-script);
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.01em;
+      line-height: 1;
+    }
+    .u-serif   { font-family: var(--font-serif); }
+    .u-italic  { font-style: italic; }
+
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: var(--step--1);
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    ::selection { background: var(--gold-soft); color: var(--ink); }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: var(--radius-s);
+    }
+
+    /* Warm, slim scrollbar to match the paper mood */
+    @supports (scrollbar-color: red blue) {
+      html { scrollbar-color: var(--brown) var(--cream-deep); scrollbar-width: thin; }
+    }
+
+    /* ============================================================
+       LAYOUT PRIMITIVES
+       ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: clamp(1.2rem, 5vw, 3rem);
+    }
+    .container--narrow { max-width: var(--container-narrow); }
+
+    .section {
+      position: relative;
+      padding-block: var(--space-2xl);
+    }
+    .section--flush { padding-block: 0; }
+
+    /* Section index label — e.g. "01 / About" (structural helper) */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: var(--space-m);
+    }
+    .section-label__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--accent-2);
+    }
+    .section-label::before {
+      content: "";
+      width: clamp(28px, 6vw, 56px);
+      height: 1px;
+      background: var(--accent-2);
+    }
+
+    /* ============================================================
+       ATMOSPHERE — vintage film grain overlay
+       A fixed, non-interactive texture that gives the whole
+       "world" a warm analogue feel.
+       ============================================================ */
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.05;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    /* Subtle warm vignette to frame the page like film */
+    .vignette {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(74, 46, 40, 0.14) 100%);
+    }
+
+    /* ============================================================
+       SITE HEADER / NAV (skeleton)
+       ============================================================ */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-s);
+      padding: var(--space-xs) clamp(1.2rem, 5vw, 3rem);
+      mix-blend-mode: multiply;
+    }
+    .site-header__mark {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: var(--step-1);
+      color: var(--text-strong);
+    }
+    .site-nav {
+      display: flex;
+      gap: var(--space-s);
+      font-size: var(--step--1);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 640px) {
+      .site-nav { display: none; }
+    }
+
+    /* ============================================================
+       SECTION SCAFFOLD PLACEHOLDERS
+       Temporary styling so the bones are visible while empty.
+       Removed once real content lands.
+       ============================================================ */
+    .scaffold {
+      min-height: 40vh;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      gap: var(--space-xs);
+      border: 1px dashed var(--line);
+      border-radius: var(--radius-m);
+      color: var(--text-muted);
+    }
+    #hero.scaffold { min-height: 100dvh; }
+
+    /* ============================================================
+       FOOTER (skeleton)
+       ============================================================ */
+    .site-footer {
+      padding-block: var(--space-l);
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: var(--step--1);
+    }
+
+    /* ============================================================
+       ACCESSIBILITY
+       ============================================================ */
+    .visually-hidden {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .skip-link {
+      position: absolute;
+      left: 50%;
+      top: -100px;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: var(--ink);
+      color: var(--cream);
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-s);
+      transition: top 0.2s var(--ease);
+    }
+    .skip-link:focus { top: var(--space-xs); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Atmosphere overlays -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="site-header">
+    <a class="site-header__mark" href="#hero" aria-label="Home">S&amp;B</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#brands">Brands</a>
+      <a href="#work">Work</a>
+      <a href="#community">Community</a>
+      <a href="#collaborate">Collaborate</a>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       MAIN — six sections. Bones only, content added later.
+       ============================================================ -->
+  <main id="main">
+
+    <!-- 1 · HERO — full-screen immersive opening: name + visual statement -->
+    <section id="hero" class="section section--flush scaffold" aria-label="Introduction">
+      <p class="eyebrow">01 — Hero</p>
+      <p class="u-script" style="font-size: var(--step-2)">the opening world</p>
+    </section>
+
+    <!-- 2 · ABOUT — short, punchy, in-voice -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container container--narrow">
+        <div class="scaffold">
+          <p class="eyebrow">02 — About</p>
+          <h2 id="about-title" class="visually-hidden">About</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · BRANDS — logo grid revealed on scroll -->
+    <section id="brands" class="section" aria-labelledby="brands-title">
+      <div class="container">
+        <div class="scaffold">
+          <p class="eyebrow">03 — Brands</p>
+          <h2 id="brands-title" class="visually-hidden">Brands I've worked with</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · WORK / REELS — grid of best content -->
+    <section id="work" class="section" aria-labelledby="work-title">
+      <div class="container">
+        <div class="scaffold">
+          <p class="eyebrow">04 — Work &amp; Reels</p>
+          <h2 id="work-title" class="visually-hidden">My work</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · COMMUNITY — audience stats by platform, made to feel alive -->
+    <section id="community" class="section" aria-labelledby="community-title">
+      <div class="container">
+        <div class="scaffold">
+          <p class="eyebrow">05 — Community</p>
+          <h2 id="community-title" class="visually-hidden">Community</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · COLLABORATE — warm, inviting closing -->
+    <section id="collaborate" class="section" aria-labelledby="collaborate-title">
+      <div class="container container--narrow">
+        <div class="scaffold">
+          <p class="eyebrow">06 — Collaborate</p>
+          <h2 id="collaborate-title" class="visually-hidden">Let's collaborate</h2>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span data-year></span> — built with soul.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPT — foundation only.
+       Reveal-on-scroll, nav behaviour etc. added with content.
+       ============================================================ -->
+  <script>
+    (function () {
+      "use strict";
+
+      // Current year in footer
+      var yearEl = document.querySelector("[data-year]");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Placeholder: IntersectionObserver-based scroll reveals
+      // will hook in here once real section content exists.
+    })();
+  </script>
+</body>
+</html>
