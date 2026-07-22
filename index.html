@@ -430,6 +430,91 @@
     }
 
     /* ============================================================
+       2 · ABOUT
+       Editorial split: scrapbook portrait + punchy copy in-voice.
+       ============================================================ */
+    .about__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: clamp(2rem, 6vw, 5.5rem);
+      align-items: center;
+    }
+    @media (max-width: 820px) {
+      .about__grid { grid-template-columns: 1fr; gap: var(--space-l); }
+    }
+
+    /* Scrapbook portrait — taped polaroid feel */
+    .about__portrait {
+      position: relative;
+      justify-self: center;
+      width: min(100%, 360px);
+      aspect-ratio: 4 / 5;
+      background:
+        linear-gradient(150deg, var(--cream-deep), var(--cream-soft));
+      border: 10px solid var(--cream-soft);
+      border-bottom-width: 46px;              /* polaroid chin */
+      box-shadow: var(--shadow-m);
+      transform: rotate(-2.5deg);
+      transition: transform var(--dur) var(--ease);
+    }
+    .about__portrait:hover { transform: rotate(-1deg) scale(1.01); }
+    /* placeholder monogram until a real photo is dropped in */
+    .about__portrait::after {
+      content: "A";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(4rem, 14vw, 8rem);
+      color: var(--line);
+    }
+    /* washi-tape accents */
+    .about__tape {
+      position: absolute;
+      width: 96px; height: 30px;
+      background: rgba(184, 137, 58, 0.32);
+      border: 1px dashed rgba(74, 46, 40, 0.25);
+      z-index: 3;
+    }
+    .about__tape--tl { top: -14px; left: -22px; transform: rotate(-28deg); }
+    .about__tape--br { bottom: 8px; right: -24px; transform: rotate(-24deg);
+                       background: rgba(142, 30, 26, 0.18); }
+    .about__caption {
+      position: absolute;
+      left: 0; right: 0; bottom: -34px;
+      text-align: center;
+      font-family: var(--font-script);
+      font-size: 1.7rem;
+      color: var(--brown);
+    }
+
+    .about__lead {
+      font-family: var(--font-serif);
+      font-size: var(--step-2);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin-bottom: var(--space-s);
+      max-width: 22ch;
+    }
+    .about__lead em { font-style: italic; color: var(--accent); }
+
+    .about__body > p { margin-bottom: var(--space-s); max-width: 52ch; }
+    .about__body b { color: var(--accent); font-weight: 600; }
+
+    .about__sign {
+      display: block;
+      margin-top: var(--space-m);
+      font-family: var(--font-script);
+      font-size: 2.4rem;
+      color: var(--accent);
+      transform: rotate(-3deg);
+    }
+
+    /* ============================================================
        SECTION SCAFFOLD PLACEHOLDERS
        Temporary styling so the bones are visible while empty.
        Removed once real content lands.
@@ -552,10 +637,38 @@
 
     <!-- 2 · ABOUT — short, punchy, in-voice -->
     <section id="about" class="section" aria-labelledby="about-title">
-      <div class="container container--narrow">
-        <div class="scaffold">
-          <p class="eyebrow">02 — About</p>
-          <h2 id="about-title" class="visually-hidden">About</h2>
+      <div class="container">
+        <p class="section-label">
+          <span class="section-label__num">02</span>
+          <span class="eyebrow">About</span>
+        </p>
+
+        <div class="about__grid">
+          <figure class="about__portrait">
+            <span class="about__tape about__tape--tl" aria-hidden="true"></span>
+            <span class="about__tape about__tape--br" aria-hidden="true"></span>
+            <figcaption class="about__caption">hi, it's me x</figcaption>
+          </figure>
+
+          <div class="about__text">
+            <h2 id="about-title" class="about__lead">
+              I'm Angelique — a UGC creator who makes brands feel like
+              <em>someone you'd actually trust.</em>
+            </h2>
+            <div class="about__body">
+              <p>
+                I don't do polished-and-empty. I do <b>real</b> — the kind of
+                content that stops the scroll because it feels like a friend,
+                not an ad. Warm light, honest words, a little bit of magic.
+              </p>
+              <p>
+                Five years in, I've learned that people don't buy products —
+                they buy <b>feelings</b>. So that's what I build: tiny cinematic
+                worlds where your brand becomes part of someone's real life.
+              </p>
+              <span class="about__sign" aria-hidden="true">— Angelique</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
