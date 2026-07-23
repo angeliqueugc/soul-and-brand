@@ -515,6 +515,68 @@
     }
 
     /* ============================================================
+       REVEAL UTILITY (shared, scroll-triggered)
+       ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+      transition-delay: var(--reveal-delay, 0s);
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ============================================================
+       3 · BRANDS
+       Logo grid that reveals on scroll. Text-set placeholders
+       until real logo art is dropped in.
+       ============================================================ */
+    .brands__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: var(--space-s);
+      margin-bottom: var(--space-l);
+    }
+    .brands__title { font-size: var(--step-3); max-width: 16ch; }
+    .brands__title em { font-style: italic; color: var(--accent); }
+    .brands__note {
+      max-width: 30ch;
+      color: var(--text-muted);
+      font-size: var(--step-0);
+    }
+
+    .brands__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    @media (max-width: 860px) { .brands__grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 520px) { .brands__grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .brands__cell {
+      display: grid;
+      place-content: center;
+      min-height: clamp(96px, 14vw, 150px);
+      padding: var(--space-s);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-family: var(--font-serif);
+      font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+      letter-spacing: 0.02em;
+      color: var(--brown);
+      text-align: center;
+      transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+    }
+    .brands__cell:nth-child(even) { font-style: italic; }
+    .brands__cell:hover { background: var(--burgundy); color: var(--cream); }
+
+    /* ============================================================
        SECTION SCAFFOLD PLACEHOLDERS
        Temporary styling so the bones are visible while empty.
        Removed once real content lands.
@@ -676,9 +738,34 @@
     <!-- 3 · BRANDS — logo grid revealed on scroll -->
     <section id="brands" class="section" aria-labelledby="brands-title">
       <div class="container">
-        <div class="scaffold">
-          <p class="eyebrow">03 — Brands</p>
-          <h2 id="brands-title" class="visually-hidden">Brands I've worked with</h2>
+        <p class="section-label">
+          <span class="section-label__num">03</span>
+          <span class="eyebrow">Brands</span>
+        </p>
+
+        <div class="brands__head">
+          <h2 id="brands-title" class="brands__title reveal">
+            In good <em>company.</em>
+          </h2>
+          <p class="brands__note reveal" style="--reveal-delay: .1s">
+            A few of the names I've created for — from indie labels
+            to household shelves.
+          </p>
+        </div>
+
+        <div class="brands__grid" role="list" aria-label="Brand collaborations">
+          <div class="brands__cell reveal" role="listitem">Maison Noir</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.05s">Golden Hour</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.1s">Lumière</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.15s">Wildflower</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.05s">Atelier 21</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.1s">Nordic Co.</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.15s">Bloom &amp; Co</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.2s">Velvet Skin</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.1s">Sunday Ritual</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.15s">Terra Home</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.2s">Cloud Nine</div>
+          <div class="brands__cell reveal" role="listitem" style="--reveal-delay:.25s">Fleur Studio</div>
         </div>
       </div>
     </section>
@@ -736,8 +823,23 @@
       var yearEl = document.querySelector("[data-year]");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Placeholder: IntersectionObserver-based scroll reveals
-      // will hook in here once real section content exists.
+      // Scroll reveals — fade/rise elements as they enter the viewport
+      var revealEls = document.querySelectorAll(".reveal");
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reduceMotion || !("IntersectionObserver" in window)) {
+        revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+      } else {
+        var io = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+        revealEls.forEach(function (el) { io.observe(el); });
+      }
     })();
   </script>
 </body>
