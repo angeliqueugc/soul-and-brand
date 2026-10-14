@@ -169,7 +169,7 @@ Fill this in during the build and keep it up to date. Use it in every conversati
 - Worked with brands: yes, regularly
 - Social accounts to show: yes (exact handles to ask at the Contact section)
 - Video formats: Hook ads, unboxings, product demos, testimonial-style
-- Confirmed style (colours, fonts, mood):
+- Confirmed style (colours, fonts, mood): Boho minimalism: calm, warm, natural, lots of white space. Colours: cream/beige backgrounds, chocolate brown text, Bordeaux accent for buttons and details. Fonts: elegant narrow serif for headings, simple readable sans-serif for text (Google Fonts, self-hosted). Layout: tidy, soft rounded corners, videos large and central. Original design (user liked Yule's template but we do not copy it; no pink).
 - Sections switched on (planned): Intro, Work, Proof, About, Services, Contact + Testimonials, Brand logos, Case studies (paid brand work exists). Each only goes live with real content behind it.
 - Shows prices: yes / no
 - Live address:
