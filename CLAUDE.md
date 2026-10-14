@@ -174,4 +174,5 @@ Fill this in during the build and keep it up to date. Use it in every conversati
 - Shows prices: yes / no
 - Live address:
 - Decisions and why:
+  - Hero: the lipstick video (video-01) plays at the top of the start page (muted autoplay, playsinline).
   - Phone-only setup (no laptop): the site is built in a Claude Code cloud session and stored in the GitHub repo `angeliqueugc/soul-and-brand`, because the cloud container is temporary. Every save point is pushed to GitHub. Photos come via the chat, videos via Google Drive. Previews are shared as links the user opens on their phone. Mac/Desktop/Finder steps in these rules don't apply; going live and updates are done from the phone (e.g. Netlify connected to the GitHub repo).
