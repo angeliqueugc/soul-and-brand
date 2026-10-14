@@ -164,13 +164,13 @@ Fill this in during the build and keep it up to date. Use it in every conversati
 - Name:
 - Country:
 - Chat language: Deutsch
-- Website language:
-- Niche:
-- Worked with brands: yes / no
-- Social accounts to show:
-- Video formats:
+- Website language: Deutsch
+- Niche: Beauty, Fashion, Food, Home, Tech (broad lifestyle creator)
+- Worked with brands: yes, regularly
+- Social accounts to show: yes (exact handles to ask at the Contact section)
+- Video formats: Hook ads, unboxings, product demos, testimonial-style
 - Confirmed style (colours, fonts, mood):
-- Sections switched on:
+- Sections switched on (planned): Intro, Work, Proof, About, Services, Contact + Testimonials, Brand logos, Case studies (paid brand work exists). Each only goes live with real content behind it.
 - Shows prices: yes / no
 - Live address:
 - Decisions and why:
