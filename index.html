@@ -121,12 +121,16 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
 .photo-grid img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; background: var(--sand); }
 
 /* Results */
-.stats { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.stats { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); align-items: start; }
 .stat { display: grid; gap: 0.3rem; align-content: start; margin: 0; padding: 1.4rem; background: var(--sand); border-radius: var(--radius); }
 .stat img { width: 100%; height: auto; border-radius: 10px; margin-top: 0.6rem; background: var(--paper); }
 .stat .meta { font-size: var(--step--1); color: var(--ink-soft); }
 .reach { display: grid; gap: var(--gap); grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: var(--gap); }
 .reach img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; }
+.work-sub { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; margin: 2.5rem 0 1rem; font-size: var(--step-1); }
+.work-sub:first-of-type { margin-top: 0; }
+.work-sub span { font-family: var(--font-body); font-size: var(--step--1); color: var(--ink-soft); }
+.vid-contain video { object-fit: contain; }
 .work-empty { display: grid; gap: 0.4rem; padding: 2rem; text-align: center; color: var(--accent); }
 .services-cta { margin-top: 2rem; }
 .stat .num { font-family: var(--font-display); font-size: var(--step-2); line-height: 1; font-variant-numeric: tabular-nums; }
@@ -352,11 +356,221 @@ main { overflow-x: clip; }
       <div class="section-head">
         <p class="eyebrow">Arbeiten</p>
         <h2 id="work-title">Videos<svg class="st st-flat st-excl fly-scroll" style="--fy:-30px" viewBox="0 0 40 100" aria-hidden="true"><use href="#s-excl"/></svg></h2>
-        <p class="lead">Hook Ads, Unboxings, Produkt-Demos und Testimonials aus Beauty, Wellbeing und Lifestyle.</p>
+        <p class="lead">Hook Ads, Unboxings, Produkt-Demos und Testimonials aus Beauty, Wellbeing und Lifestyle. Tippe auf ein Video, um es mit Ton abzuspielen.</p>
       </div>
-      <div class="work-empty ph">
-        <span class="ph-note">Platzhalter</span>
-        <p>[Hier kommen deine echten Videobeispiele hin. Schick sie mir einfach in den Chat.]</p>
+      <h3 class="work-sub">Paid Ads <span>Videos, die als Werbeanzeige gelaufen sind</span></h3>
+      <div class="work-grid">
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-02.mp4" poster="assets/img/arbeit-02-cover.jpg" playsinline preload="none" aria-label="Maschinenreiniger"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Maschinenreiniger abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Maschinenreiniger</span>
+            <span class="meta">Paid Ad · Home</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-03.mp4" poster="assets/img/arbeit-03-cover.jpg" playsinline preload="none" aria-label="Kissen"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Kissen abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Kissen</span>
+            <span class="meta">Paid Ad · Schlaf &amp; Home</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-09.mp4" poster="assets/img/arbeit-09-cover.jpg" playsinline preload="none" aria-label="Haarpflege"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Haarpflege abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Haarpflege</span>
+            <span class="meta">Paid Ad · Hair</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-14.mp4" poster="assets/img/arbeit-14-cover.jpg" playsinline preload="none" aria-label="Skin + Me"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Skin + Me abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Skin + Me</span>
+            <span class="meta">Paid Ad · Skincare</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-16.mp4" poster="assets/img/arbeit-16-cover.jpg" playsinline preload="none" aria-label="WC-Reiniger"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video WC-Reiniger abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">WC-Reiniger</span>
+            <span class="meta">Paid Ad · Home</span>
+          </figcaption>
+        </figure>
+      </div>
+      <h3 class="work-sub">Organic Content <span>Videos für Social Media und den eigenen Kanal</span></h3>
+      <div class="work-grid">
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-05.mp4" poster="assets/img/arbeit-05-cover.jpg" playsinline preload="none" aria-label="Vorstellungsvideo"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Vorstellungsvideo abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Vorstellungsvideo</span>
+            <span class="meta">Organic · UGC Intro</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-01.mp4" poster="assets/img/arbeit-01-cover.jpg" playsinline preload="none" aria-label="Cocunat"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Cocunat abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Cocunat</span>
+            <span class="meta">Organic · Beauty · Unboxing</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-13.mp4" poster="assets/img/arbeit-13-cover.jpg" playsinline preload="none" aria-label="Biences"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Biences abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Biences</span>
+            <span class="meta">Organic · Beauty</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-04.mp4" poster="assets/img/arbeit-04-cover.jpg" playsinline preload="none" aria-label="Beauty-Routine"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Beauty-Routine abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Beauty-Routine</span>
+            <span class="meta">Organic · Beauty</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-11.mp4" poster="assets/img/arbeit-11-cover.jpg" playsinline preload="none" aria-label="Bodycare"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Bodycare abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Bodycare</span>
+            <span class="meta">Organic · Wellbeing</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-12.mp4" poster="assets/img/arbeit-12-cover.jpg" playsinline preload="none" aria-label="Unboxing"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Unboxing abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Unboxing</span>
+            <span class="meta">Organic · New in</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-10.mp4" poster="assets/img/arbeit-10-cover.jpg" playsinline preload="none" aria-label="Aesthetic Mood"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Aesthetic Mood abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Aesthetic Mood</span>
+            <span class="meta">Organic · Lifestyle</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-07.mp4" poster="assets/img/arbeit-07-cover.jpg" playsinline preload="none" aria-label="Fashion-Shooting"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Fashion-Shooting abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Fashion-Shooting</span>
+            <span class="meta">Organic · Fashion</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-06.mp4" poster="assets/img/arbeit-06-cover.jpg" playsinline preload="none" aria-label="Behind the Scenes"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Behind the Scenes abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Behind the Scenes</span>
+            <span class="meta">Organic · So entsteht Content</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid" data-video="tap">
+            <video src="assets/video/arbeit-08.mp4" poster="assets/img/arbeit-08-cover.jpg" playsinline preload="none" aria-label="Studio-Shooting"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Studio-Shooting abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Studio-Shooting</span>
+            <span class="meta">Organic · Behind the Scenes</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid vid-contain" data-video="tap">
+            <video src="assets/video/arbeit-15.mp4" poster="assets/img/arbeit-15-cover.jpg" playsinline preload="none" aria-label="UGC Recap"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video UGC Recap abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">UGC Recap</span>
+            <span class="meta">Organic · Querformat</span>
+          </figcaption>
+        </figure>
       </div>
 
       <div class="section-head photo-head">
@@ -364,6 +578,18 @@ main { overflow-x: clip; }
         <p class="lead">Fotocontent mit natürlichem Licht, warmen Materialien und viel Ruhe im Bild.</p>
       </div>
       <div class="photo-grid">
+        <img src="assets/img/foto-ahead.jpg" width="720" height="900" loading="lazy" alt="Angelique hält einen ahead Proteinriegel in der Küche">
+        <img src="assets/img/foto-majaskin.jpg" width="720" height="900" loading="lazy" alt="Majaskin Facial Contour Cups im Sonnenlicht">
+        <img src="assets/img/foto-bahlsen-socken.jpg" width="720" height="900" loading="lazy" alt="Hand hält zwei Paar Bahlsen-Socken mit Sternen">
+        <img src="assets/img/foto-nau.jpg" width="720" height="900" loading="lazy" alt="Angelique mit nau organic Serum im Sonnenlicht">
+        <img src="assets/img/foto-shyne.jpg" width="720" height="900" loading="lazy" alt="Shyne Instant Glow Fläschchen, Angelique unscharf im Hintergrund">
+        <img src="assets/img/foto-studio.jpg" width="720" height="900" loading="lazy" alt="Angelique im Fotostudio vor einem Regenbogen-Licht">
+        <img src="assets/img/foto-pool-kaffee.jpg" width="720" height="900" loading="lazy" alt="Eiskaffee in der Hand am Pool, von oben">
+        <img src="assets/img/foto-klosterfrau.jpg" width="720" height="900" loading="lazy" alt="Angelique lächelt mit Klosterfrau Perioden Wärme Balsam">
+        <img src="assets/img/foto-kaffee.jpg" width="720" height="900" loading="lazy" alt="Angelique mit Iced Coffee am sonnigen Fenster">
+        <img src="assets/img/foto-kapseln.jpg" width="720" height="900" loading="lazy" alt="Angelique hält eine Dose mit goldenen Kapseln">
+        <img src="assets/img/foto-majaskin-2.jpg" width="720" height="900" loading="lazy" alt="Hand hält einen Majaskin Cup über der offenen Box">
+        <img src="assets/img/foto-bahlsen-drink.jpg" width="720" height="900" loading="lazy" alt="Matcha-Drink mit Bahlsen-Keks, Orangen im Hintergrund">
         <img src="assets/img/fotos-collage-1.jpg" width="720" height="900" loading="lazy" alt="Fotocollage: Kapseln in der Hand, Tee mit Zitronen, Gläser mit Schmuck, Angelique mit Handy">
         <img src="assets/img/fotos-collage-2.jpg" width="720" height="900" loading="lazy" alt="Fotocollage: Creme auf der Hand, Tasche mit Sonnenbrille, Outfit draußen, Kakaopulver">
         <div class="tape-on"><svg class="st st-flat fly-scroll" style="--fy:-40px;--r:-4deg" viewBox="0 0 200 40" aria-hidden="true"><use href="#s-tape-red"/></svg>
@@ -384,9 +610,15 @@ main { overflow-x: clip; }
       <div class="section-head">
         <p class="eyebrow">Ergebnisse</p>
         <h2 id="results-title">Was meine Inhalte bewirken</h2>
-        <p class="lead">Echte Zahlen aus meinen Videos. Die Screenshots aus der Statistik sind der Beleg.</p>
+        <p class="lead">Echte Zahlen aus Paid Ads und Organic Content. Die Screenshots sind der Beleg.</p>
       </div>
       <div class="stats">
+        <figure class="stat">
+          <span class="num">733.910</span>
+          <span class="what">Reichweite · Paid Ad auf Meta (EU)</span>
+          <img src="assets/img/stat-meta-reichweite.jpg" width="698" height="802" loading="lazy" alt="Screenshot aus den Meta-Anzeigendetails: Reichweite 733.910 Konten in der EU">
+          <figcaption class="meta">Meta-Anzeigenbibliothek, geschätzte Reichweite</figcaption>
+        </figure>
         <figure class="stat">
           <span class="num">3,8 Mio.</span>
           <span class="what">Aufrufe · 1.196 Likes · 897× geteilt</span>
