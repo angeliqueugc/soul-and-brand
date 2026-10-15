@@ -172,15 +172,19 @@ Fill this in during the build and keep it up to date. Use it in every conversati
 - Video formats: Hook ads, unboxings, product demos, testimonial-style
 - Confirmed style (colours, fonts, mood): Boho minimalism: calm, warm, natural, lots of white space. Colours: cream/beige backgrounds, chocolate brown text, Bordeaux accent for buttons and details. Fonts: elegant narrow serif for headings, simple readable sans-serif for text (Google Fonts, self-hosted). Layout: tidy, soft rounded corners, videos large and central. Original design (user liked Yule's template but we do not copy it; no pink).
 - Sections switched on (planned): Intro, Work, Proof, About, Services, Contact + Testimonials, Brand logos, Case studies (paid brand work exists). Each only goes live with real content behind it.
-- Shows prices: yes / no
+- Shows prices: no (user's choice; services end with 'Angebot anfragen')
 - Live address:
 - Decisions and why:
   - Hero (opening): landscape clip assets/video/intro-quer.mp4 = first 2.2 s of video-01 (holding the phone up to the camera), rotated to 16:9, sound removed (background noise), muted loop, full width above the text. Chosen by the user. The full lipstick video stays in the Work section; its cover is foto-12 (laughing, mug).
   - Stickers: original SVG stickers drawn by Claude in the site colours (bordeaux doodles, gold stars/clip/sparkles, bordeaux bow/heart/pin, washi tape, cursor) + a polaroid with polaroid-kaffee.jpg and handwritten caption (Caveat font, self-hosted). They fly in (translate/scale only, scroll-driven where supported, off with reduced motion). The user's own sticker sheet was only an example; not used.
   - Content source: texts from the user's Canva portfolio (soulundbrand.my.canva.site/portfolio-angi), used with permission: intro line, about text, focus, 'since 2022', Pampers testimonial (real client email excerpt).
   - Partners (user's own list + collab videos): Always, Schwarzkopf, Pampers, Clarins, Outfittery, Cocunat, mymuesli, SOS, Shyne, Pomelo, Biences, Majaskin, Annemarie Börlind, Haka, Cloudpillo, Superum, Rosental, Skin + Me. Shown as text marquee (cropped logos were too low quality).
-  - Work: 8 Canva collab videos (koop-*.mp4, 4:5, silent) + lipgloss video, tap to play. Duplicate Skin+Me upload dropped. koop-mein-stil.mp4 ("create more, consume less") is compressed but not used yet.
+  - Work section ("Videos"): lipgloss video removed (user). Waiting for the user's real video examples; placeholder until then.
+  - Mini-portfolio: the 8 Canva collab videos (koop-*.mp4, 4:5, silent) moved to a section "UGC Mini-Portfolio" just above Contact (user: they were only an Instagram mini portfolio).
+  - Results: analytics screenshots taken from the user's Canva portfolio: 3.8M views (8 Nov 2024), 2.6M (9 Oct 2024), 795K (22 Oct 2024) as stat cards with the screenshot as proof, plus 116K (lavera), 33.6K (skjur), 10,680. Not labelled organic/ads because the source isn't known.
+  - Services (no prices): UGC-Kooperation, Content Creation & Brandface (organic), Editing (bookable separately), Social Media Management.
+  - Testimonials (all real, from the Canva portfolio): Pampers, GREY Berlin Skincare, an unnamed client ("Kundenfeedback"), Vicki. GREY Berlin added to partners.
   - Photos: 2 Canva photo collages + 6 own photos. About photo kept small (user: was too big).
-  - Still open: results/analytics screenshots (user will upload), services + prices, location/country, Impressum.
+  - Still open: real video examples, location/country, Impressum + Datenschutz.
   - Preview link for the user: https://claude.ai/artifact/WhZrzv4tTfHQYHM822teco (private Claude artifact). After each change, rebuild the preview copy from index.html (strip doctype/html/head/body, keep assets as files) and republish to this same URL.
   - Phone-only setup (no laptop): the site is built in a Claude Code cloud session and stored in the GitHub repo `angeliqueugc/soul-and-brand`, because the cloud container is temporary. Every save point is pushed to GitHub. Photos come via the chat, videos via Google Drive. Previews are shared as links the user opens on their phone. Mac/Desktop/Finder steps in these rules don't apply; going live and updates are done from the phone (e.g. Netlify connected to the GitHub repo).

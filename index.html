@@ -122,7 +122,13 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
 
 /* Results */
 .stats { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
-.stat { display: grid; gap: 0.3rem; padding: 1.4rem; background: var(--sand); border-radius: var(--radius); }
+.stat { display: grid; gap: 0.3rem; align-content: start; margin: 0; padding: 1.4rem; background: var(--sand); border-radius: var(--radius); }
+.stat img { width: 100%; height: auto; border-radius: 10px; margin-top: 0.6rem; background: var(--paper); }
+.stat .meta { font-size: var(--step--1); color: var(--ink-soft); }
+.reach { display: grid; gap: var(--gap); grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: var(--gap); }
+.reach img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; }
+.work-empty { display: grid; gap: 0.4rem; padding: 2rem; text-align: center; color: var(--accent); }
+.services-cta { margin-top: 2rem; }
 .stat .num { font-family: var(--font-display); font-size: var(--step-2); line-height: 1; font-variant-numeric: tabular-nums; }
 .stat .what { font-size: var(--step--1); color: var(--ink-soft); }
 
@@ -140,7 +146,7 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
 .service .price { font-variant-numeric: tabular-nums; color: var(--ink-soft); }
 
 /* Testimonials */
-.quotes { max-width: 760px; display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.quotes { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 .quote { margin: 0; padding: 1.6rem; background: var(--sand); border-radius: var(--radius); display: grid; gap: 0.8rem; }
 .quote blockquote { margin: 0; font-family: var(--font-display); font-size: var(--step-1); line-height: 1.35; }
 .quote figcaption { font-size: var(--step--1); color: var(--ink-soft); }
@@ -315,8 +321,8 @@ main { overflow-x: clip; }
       <h2 id="partners-title" class="eyebrow">Marken, für die ich produziert habe</h2>
     </div>
     <div class="marquee">
-      <ul class="marquee-track"><li>Always</li><li>Schwarzkopf</li><li>Pampers</li><li>Clarins</li><li>Outfittery</li><li>Cocunat</li><li>mymuesli</li><li>SOS</li><li>Shyne</li><li>Pomelo</li><li>Biences</li><li>Majaskin</li><li>Annemarie Börlind</li><li>Haka</li><li>Cloudpillo</li><li>Superum</li><li>Rosental</li><li>Skin + Me</li></ul>
-      <ul class="marquee-track" aria-hidden="true"><li>Always</li><li>Schwarzkopf</li><li>Pampers</li><li>Clarins</li><li>Outfittery</li><li>Cocunat</li><li>mymuesli</li><li>SOS</li><li>Shyne</li><li>Pomelo</li><li>Biences</li><li>Majaskin</li><li>Annemarie Börlind</li><li>Haka</li><li>Cloudpillo</li><li>Superum</li><li>Rosental</li><li>Skin + Me</li></ul>
+      <ul class="marquee-track"><li>Always</li><li>Schwarzkopf</li><li>Pampers</li><li>Clarins</li><li>Outfittery</li><li>Cocunat</li><li>mymuesli</li><li>SOS</li><li>Shyne</li><li>Pomelo</li><li>Biences</li><li>Majaskin</li><li>Annemarie Börlind</li><li>Haka</li><li>Cloudpillo</li><li>Superum</li><li>Rosental</li><li>Skin + Me</li><li>GREY Berlin</li></ul>
+      <ul class="marquee-track" aria-hidden="true"><li>Always</li><li>Schwarzkopf</li><li>Pampers</li><li>Clarins</li><li>Outfittery</li><li>Cocunat</li><li>mymuesli</li><li>SOS</li><li>Shyne</li><li>Pomelo</li><li>Biences</li><li>Majaskin</li><li>Annemarie Börlind</li><li>Haka</li><li>Cloudpillo</li><li>Superum</li><li>Rosental</li><li>Skin + Me</li><li>GREY Berlin</li></ul>
     </div>
   </section>
 
@@ -326,7 +332,133 @@ main { overflow-x: clip; }
       <div class="section-head">
         <p class="eyebrow">Arbeiten</p>
         <h2 id="work-title">Videos<svg class="st st-flat st-excl fly-scroll" style="--fy:-30px" viewBox="0 0 40 100" aria-hidden="true"><use href="#s-excl"/></svg></h2>
-        <p class="lead">Ausgewählte Kooperationen aus Beauty, Wellbeing und Lifestyle. Tippe auf ein Video, um es abzuspielen.</p>
+        <p class="lead">Hook Ads, Unboxings, Produkt-Demos und Testimonials aus Beauty, Wellbeing und Lifestyle.</p>
+      </div>
+      <div class="work-empty ph">
+        <span class="ph-note">Platzhalter</span>
+        <p>[Hier kommen deine echten Videobeispiele hin. Schick sie mir einfach in den Chat.]</p>
+      </div>
+
+      <div class="section-head photo-head">
+        <h2>Fotos <svg class="st st-flat st-heart" viewBox="0 0 100 90" aria-hidden="true"><use href="#s-heart-line"/></svg></h2>
+        <p class="lead">Fotocontent mit natürlichem Licht, warmen Materialien und viel Ruhe im Bild.</p>
+      </div>
+      <div class="photo-grid">
+        <img src="assets/img/fotos-collage-1.jpg" width="720" height="900" loading="lazy" alt="Fotocollage: Kapseln in der Hand, Tee mit Zitronen, Gläser mit Schmuck, Angelique mit Handy">
+        <img src="assets/img/fotos-collage-2.jpg" width="720" height="900" loading="lazy" alt="Fotocollage: Creme auf der Hand, Tasche mit Sonnenbrille, Outfit draußen, Kakaopulver">
+        <div class="tape-on"><svg class="st st-flat fly-scroll" style="--fy:-40px;--r:-4deg" viewBox="0 0 200 40" aria-hidden="true"><use href="#s-tape-red"/></svg>
+        <img src="assets/img/foto-01.jpg" width="720" height="900" loading="lazy" alt="Creatorin hält zwei türkise Body-Gel-Tuben ans Gesicht, sonniges Wohnzimmer"></div>
+        <div class="tape-on"><svg class="st st-flat fly-scroll" style="--fy:-40px;--r:3deg" viewBox="0 0 200 40" aria-hidden="true"><use href="#s-tape"/></svg>
+        <img src="assets/img/foto-07.jpg" width="720" height="900" loading="lazy" alt="Hände mit Pipette über einem Serum-Fläschchen, Rattan-Tablett mit Kerzen"></div>
+        <img src="assets/img/foto-08.jpg" width="720" height="900" loading="lazy" alt="Creatorin im Waffel-Bademantel setzt eine Tuchmaske auf">
+        <img src="assets/img/foto-04.jpg" width="720" height="900" loading="lazy" alt="Iced Latte in der Hand, von oben, mit Rattan-Tablett und Kerzen">
+        <img src="assets/img/foto-16.jpg" width="720" height="900" loading="lazy" alt="Tasse Tee mit Blüten, umgeben von Grapefruit-Scheiben">
+        <img src="assets/img/foto-17.jpg" width="720" height="900" loading="lazy" alt="Joghurt-Schale mit Blaubeeren und Mandarinen neben einer Dose Proteinpulver">
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section" id="ergebnisse" aria-labelledby="results-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Ergebnisse</p>
+        <h2 id="results-title">Was meine Inhalte bewirken</h2>
+        <p class="lead">Echte Zahlen aus meinen Videos. Die Screenshots aus der Statistik sind der Beleg.</p>
+      </div>
+      <div class="stats">
+        <figure class="stat">
+          <span class="num">3,8 Mio.</span>
+          <span class="what">Aufrufe · 1.196 Likes · 897× geteilt</span>
+          <img src="assets/img/stat-3-8-mio.jpg" width="799" height="545" loading="lazy" alt="Statistik-Screenshot: 3,8 Millionen Aufrufe, 1.196 Likes, 60 Kommentare, 897 Shares, 250 Speicherungen, veröffentlicht am 8. November 2024">
+          <figcaption class="meta">Video vom 8. Nov. 2024</figcaption>
+        </figure>
+        <figure class="stat">
+          <span class="num">2,6 Mio.</span>
+          <span class="what">Aufrufe · 2.021 Likes · 304× gespeichert</span>
+          <img src="assets/img/stat-2-6-mio.jpg" width="799" height="508" loading="lazy" alt="Statistik-Screenshot: 2,6 Millionen Aufrufe, 2.021 Likes, 4 Kommentare, 109 Shares, 304 Speicherungen, veröffentlicht am 9. Oktober 2024">
+          <figcaption class="meta">Video vom 9. Okt. 2024</figcaption>
+        </figure>
+        <figure class="stat">
+          <span class="num">795 Tsd.</span>
+          <span class="what">Aufrufe · 663 Likes · 70× gespeichert</span>
+          <img src="assets/img/stat-795k.jpg" width="799" height="566" loading="lazy" alt="Statistik-Screenshot: 795.000 Aufrufe, 663 Likes, 2 Kommentare, 31 Shares, 70 Speicherungen, veröffentlicht am 22. Oktober 2024">
+          <figcaption class="meta">Video vom 22. Okt. 2024</figcaption>
+        </figure>
+      </div>
+      <div class="reach">
+        <img src="assets/img/reach-116k.jpg" width="400" height="500" loading="lazy" alt="Video mit lavera-Produkten, 116.000 Aufrufe">
+        <img src="assets/img/reach-33k.jpg" width="400" height="500" loading="lazy" alt="Video mit skjur-Produkt, 33.600 Aufrufe">
+        <img src="assets/img/reach-10k.jpg" width="400" height="500" loading="lazy" alt="Selfie-Video, 10.680 Aufrufe">
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="ueber-mich" aria-labelledby="about-title">
+    <div class="wrap about">
+      <div class="about-photo">
+        <img src="assets/img/ueber-mich.jpg" width="800" height="1000" loading="lazy" alt="Angelique lächelnd am sonnigen Fenster">
+        <svg class="st st-clip fly-scroll" style="--fy:-50px" viewBox="0 0 40 110" aria-hidden="true"><use href="#s-clip"/></svg>
+        <svg class="st st-bow fly-scroll" style="--fx:50px;--fy:30px" viewBox="0 0 120 100" aria-hidden="true"><use href="#s-bow"/></svg>
+      </div>
+      <div class="about-text">
+        <p class="eyebrow">Über mich</p>
+        <h2 id="about-title">Hi, ich bin Angelique</h2>
+        <p>Ich arbeite seit fast drei Jahren als UGC-Creatorin und habe bereits für Marken wie Always, Schwarzkopf, Pampers, Outfittery und Pomelo produziert.</p>
+        <p>Mein Fokus: ästhetische Bildsprache, klare Botschaften und authentisches Storytelling, das nicht nur Aufmerksamkeit gewinnt, sondern Ergebnisse liefert. Egal ob für Paid Ads oder Organic Content.</p>
+        <p>Mit meiner ruhigen, einfühlsamen Art entwickle ich Videos, die nicht laut schreien, sondern berühren, Vertrauen schaffen und im Kopf bleiben. Besonders im Beauty- und Health-Bereich setze ich auf echte Geschichten, die Zielgruppen abholen und Kaufentscheidungen positiv beeinflussen.</p>
+        <ul class="facts">
+          <li>UGC seit 2022</li>
+          <li>Paid Ads &amp; Organic</li>
+          <li>Beauty &amp; Health</li>
+          <li class="ph">[Standort]</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="leistungen" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Leistungen</p>
+        <h2 id="services-title">Was du bei mir buchen kannst</h2>
+        <p class="lead">Jedes Projekt ist anders. Schreib mir, und ich mache dir ein passendes Angebot.</p>
+      </div>
+      <div class="services">
+        <article class="service"><svg class="st st-pin fly-scroll" style="--fy:-50px" viewBox="0 0 60 110" aria-hidden="true"><use href="#s-pin"/></svg><h3>UGC-Kooperation</h3><p>Authentische Videos und Fotos für eure Ads, Website und Social Media. Von der Hook bis zum fertigen Clip.</p></article>
+        <article class="service"><svg class="st st-pin fly-scroll" style="--fy:-50px" viewBox="0 0 60 110" aria-hidden="true"><use href="#s-pin"/></svg><h3>Content Creation &amp; Brandface</h3><p>Organischer Content mit mir als Gesicht eurer Marke. Ruhig, ästhetisch und nah an eurer Zielgruppe.</p></article>
+        <article class="service"><svg class="st st-pin fly-scroll" style="--fy:-50px" viewBox="0 0 60 110" aria-hidden="true"><use href="#s-pin"/></svg><h3>Editing</h3><p>Schnitt, Untertitel und Feinschliff für euer Material. Auch einzeln buchbar.</p></article>
+        <article class="service"><svg class="st st-pin fly-scroll" style="--fy:-50px" viewBox="0 0 60 110" aria-hidden="true"><use href="#s-pin"/></svg><h3>Social Media Management</h3><p>Ich betreue eure Accounts: Content-Planung, Erstellung und alles, was dazugehört, damit euer Auftritt im Blick bleibt.</p></article>
+      </div>
+      <p class="services-cta"><a class="btn btn-primary" href="#kontakt">Angebot anfragen</a></p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" id="stimmen" aria-labelledby="quotes-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Kundenstimmen</p>
+        <h2 id="quotes-title">Was Marken sagen</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote"><blockquote>„Zu sagen, dass wir begeistert sind, wäre untertrieben. Wirklich großartige Arbeit, Kompliment! Wir haben keinerlei Änderungswünsche und freuen uns schon jetzt auf eine zukünftige Zusammenarbeit.“</blockquote><figcaption>Pampers</figcaption></figure>
+        <figure class="quote"><blockquote>„Angelique achtet auf ein schönes Umfeld für ihre Videos, tolles Licht und eine passende Stimmung. Wir werden sie auf jeden Fall wieder buchen: Sie ist hoch professionell, klar in ihrer Kommunikation und sehr zuverlässig.“</blockquote><figcaption>GREY Berlin Skincare</figcaption></figure>
+        <figure class="quote"><blockquote>„Sehr ästhetische, kreative und schnelle Umsetzung. Freundliche und professionelle Zusammenarbeit. Gerne wieder!“</blockquote><figcaption>Kundenfeedback</figcaption></figure>
+        <figure class="quote"><blockquote>„Danke für deine Arbeit! Die Videos sind wirklich top.“</blockquote><figcaption>Vicki, Kundin</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini portfolio -->
+  <section class="section" id="mini-portfolio" aria-labelledby="mini-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Kooperationen</p>
+        <h2 id="mini-title">UGC Mini-Portfolio</h2>
+        <p class="lead">Kurze Einblicke in Kooperationen, die ich auf Instagram geteilt habe. Tippe auf ein Video, um es abzuspielen.</p>
       </div>
       <div class="work-grid">
         <figure class="work-card">
@@ -434,104 +566,6 @@ main { overflow-x: clip; }
             <span class="meta">Kooperation · Skincare · 0:05</span>
           </figcaption>
         </figure>
-        <figure class="work-card">
-          <div class="vid vid-45" data-video="tap">
-            <video src="assets/video/video-01.mp4" poster="assets/img/video-01-cover.jpg" playsinline preload="none" aria-label="Produkt-Demo: Lipgloss"></video>
-            <div class="vid-surface" aria-hidden="true"></div>
-            <button class="vid-btn vid-play" type="button" aria-label="Video Lipgloss abspielen">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-          </div>
-          <figcaption>
-            <span class="label">Lipgloss</span>
-            <span class="meta">Produkt-Demo · Beauty · 0:14 · mit Ton</span>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="section-head photo-head">
-        <h2>Fotos <svg class="st st-flat st-heart" viewBox="0 0 100 90" aria-hidden="true"><use href="#s-heart-line"/></svg></h2>
-        <p class="lead">Fotocontent mit natürlichem Licht, warmen Materialien und viel Ruhe im Bild.</p>
-      </div>
-      <div class="photo-grid">
-        <img src="assets/img/fotos-collage-1.jpg" width="720" height="900" loading="lazy" alt="Fotocollage: Kapseln in der Hand, Tee mit Zitronen, Gläser mit Schmuck, Angelique mit Handy">
-        <img src="assets/img/fotos-collage-2.jpg" width="720" height="900" loading="lazy" alt="Fotocollage: Creme auf der Hand, Tasche mit Sonnenbrille, Outfit draußen, Kakaopulver">
-        <div class="tape-on"><svg class="st st-flat fly-scroll" style="--fy:-40px;--r:-4deg" viewBox="0 0 200 40" aria-hidden="true"><use href="#s-tape-red"/></svg>
-        <img src="assets/img/foto-01.jpg" width="720" height="900" loading="lazy" alt="Creatorin hält zwei türkise Body-Gel-Tuben ans Gesicht, sonniges Wohnzimmer"></div>
-        <div class="tape-on"><svg class="st st-flat fly-scroll" style="--fy:-40px;--r:3deg" viewBox="0 0 200 40" aria-hidden="true"><use href="#s-tape"/></svg>
-        <img src="assets/img/foto-07.jpg" width="720" height="900" loading="lazy" alt="Hände mit Pipette über einem Serum-Fläschchen, Rattan-Tablett mit Kerzen"></div>
-        <img src="assets/img/foto-08.jpg" width="720" height="900" loading="lazy" alt="Creatorin im Waffel-Bademantel setzt eine Tuchmaske auf">
-        <img src="assets/img/foto-04.jpg" width="720" height="900" loading="lazy" alt="Iced Latte in der Hand, von oben, mit Rattan-Tablett und Kerzen">
-        <img src="assets/img/foto-16.jpg" width="720" height="900" loading="lazy" alt="Tasse Tee mit Blüten, umgeben von Grapefruit-Scheiben">
-        <img src="assets/img/foto-17.jpg" width="720" height="900" loading="lazy" alt="Joghurt-Schale mit Blaubeeren und Mandarinen neben einer Dose Proteinpulver">
-      </div>
-    </div>
-  </section>
-
-  <!-- Results -->
-  <section class="section" id="ergebnisse" aria-labelledby="results-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Ergebnisse</p>
-        <h2 id="results-title">Was meine Inhalte bewirken</h2>
-        <p class="lead ph">[Platzhalter: Hier kommen echte Zahlen mit Screenshot als Beleg. Organische Zahlen werden als „organisch“ markiert.]</p>
-      </div>
-      <div class="stats">
-        <div class="stat ph"><span class="num">00%</span><span class="what">[Kennzahl · welches Video]</span></div>
-        <div class="stat ph"><span class="num">000</span><span class="what">[Kennzahl · welches Video]</span></div>
-        <div class="stat ph"><span class="num">0,0×</span><span class="what">[Kennzahl · welche Kampagne]</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="section" id="ueber-mich" aria-labelledby="about-title">
-    <div class="wrap about">
-      <div class="about-photo">
-        <img src="assets/img/ueber-mich.jpg" width="800" height="1000" loading="lazy" alt="Angelique lächelnd am sonnigen Fenster">
-        <svg class="st st-clip fly-scroll" style="--fy:-50px" viewBox="0 0 40 110" aria-hidden="true"><use href="#s-clip"/></svg>
-        <svg class="st st-bow fly-scroll" style="--fx:50px;--fy:30px" viewBox="0 0 120 100" aria-hidden="true"><use href="#s-bow"/></svg>
-      </div>
-      <div class="about-text">
-        <p class="eyebrow">Über mich</p>
-        <h2 id="about-title">Hi, ich bin Angelique</h2>
-        <p>Ich arbeite seit fast drei Jahren als UGC-Creatorin und habe bereits für Marken wie Always, Schwarzkopf, Pampers, Outfittery und Pomelo produziert.</p>
-        <p>Mein Fokus: ästhetische Bildsprache, klare Botschaften und authentisches Storytelling, das nicht nur Aufmerksamkeit gewinnt, sondern Ergebnisse liefert. Egal ob für Paid Ads oder Organic Content.</p>
-        <p>Mit meiner ruhigen, einfühlsamen Art entwickle ich Videos, die nicht laut schreien, sondern berühren, Vertrauen schaffen und im Kopf bleiben. Besonders im Beauty- und Health-Bereich setze ich auf echte Geschichten, die Zielgruppen abholen und Kaufentscheidungen positiv beeinflussen.</p>
-        <ul class="facts">
-          <li>UGC seit 2022</li>
-          <li>Paid Ads &amp; Organic</li>
-          <li>Beauty &amp; Health</li>
-          <li class="ph">[Standort]</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="section" id="leistungen" aria-labelledby="services-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Leistungen</p>
-        <h2 id="services-title">Was du bei mir buchen kannst</h2>
-      </div>
-      <div class="services">
-        <article class="service ph"><svg class="st st-pin fly-scroll" style="--fy:-50px" viewBox="0 0 60 110" aria-hidden="true"><use href="#s-pin"/></svg><h3>[Leistung 1]</h3><p>[Kurze Beschreibung]</p><p class="price">[Preis oder „auf Anfrage“]</p></article>
-        <article class="service ph"><svg class="st st-pin fly-scroll" style="--fy:-50px" viewBox="0 0 60 110" aria-hidden="true"><use href="#s-pin"/></svg><h3>[Leistung 2]</h3><p>[Kurze Beschreibung]</p><p class="price">[Preis oder „auf Anfrage“]</p></article>
-        <article class="service ph"><svg class="st st-pin fly-scroll" style="--fy:-50px" viewBox="0 0 60 110" aria-hidden="true"><use href="#s-pin"/></svg><h3>[Leistung 3]</h3><p>[Kurze Beschreibung]</p><p class="price">[Preis oder „auf Anfrage“]</p></article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="section" id="stimmen" aria-labelledby="quotes-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Kundenstimmen</p>
-        <h2 id="quotes-title">Was Marken sagen</h2>
-      </div>
-      <div class="quotes">
-        <figure class="quote"><blockquote>„Zu sagen, dass wir begeistert sind, wäre untertrieben. Wirklich großartige Arbeit, Kompliment! Wir haben keinerlei Änderungswünsche und freuen uns schon jetzt auf eine zukünftige Zusammenarbeit.“</blockquote><figcaption>Pampers</figcaption></figure>
       </div>
     </div>
   </section>
