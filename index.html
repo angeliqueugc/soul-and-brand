@@ -7,7 +7,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="[Platzhalter] UGC Creator für Beauty, Food, Home, Fashion und Tech. Ruhige, ehrliche Videos und Fotos für Marken.">
 <style>
-/* Layout: phone-first single column; from 900px the intro splits into text | video, work becomes a grid. */
+/* Layout: phone-first single column; a wide landscape clip opens the page, text follows; work becomes a grid on wider screens. */
 :root {
   --bg: #F4EEE6;          /* cream */
   --sand: #E9DDCF;        /* beige surface */
@@ -86,15 +86,12 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
 .mail-link { font-size: var(--step-0); color: var(--ink); text-underline-offset: 4px; text-decoration-color: var(--line); word-break: break-all; }
 .niches { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; margin: 0; list-style: none; }
 .niches li { font-size: var(--step--1); border: 1px solid var(--line); border-radius: 999px; padding: 0.25rem 0.75rem; color: var(--ink-soft); }
-@media (min-width: 900px) {
-  .intro .wrap { grid-template-columns: 1.15fr 0.85fr; gap: 4rem; }
-}
+
 
 /* Video */
 .vid { position: relative; aspect-ratio: 9 / 16; width: 100%; max-width: 100%; border-radius: var(--radius); overflow: hidden; background: var(--sand); }
 .vid video { width: 100%; height: 100%; object-fit: cover; }
-.vid-hero { width: min(68%, calc(52svh * 9 / 16)); margin-inline: auto; }
-@media (min-width: 900px) { .vid-hero { width: min(100%, calc(min(70svh, 640px) * 9 / 16)); } }
+.vid-hero { aspect-ratio: 16 / 9; width: min(100%, calc(70svh * 16 / 9)); margin-inline: auto; }
 .vid-btn { position: absolute; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; min-width: 44px; min-height: 44px; padding: 0 0.9rem; border: 0; border-radius: 999px; background: color-mix(in srgb, var(--ink) 55%, transparent); color: var(--accent-ink); font: 500 0.85rem/1 var(--font-body); cursor: pointer; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
 .vid-sound { right: 12px; bottom: 12px; }
 .vid-play { inset: 0; margin: auto; width: 56px; height: 56px; padding: 0; background: color-mix(in srgb, var(--accent) 85%, transparent); }
@@ -177,6 +174,9 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
   <!-- Intro -->
   <section class="intro" aria-labelledby="intro-title">
     <div class="wrap">
+      <div class="vid vid-hero" data-video="auto">
+        <video src="assets/video/intro-quer.mp4" poster="assets/img/intro-quer-cover.jpg" muted playsinline loop preload="auto" aria-label="Einstieg: Creatorin hält ihr Handy beim Filmen vor die Kamera"></video>
+      </div>
       <div class="intro-text">
         <p class="eyebrow">UGC Creator aus <span class="ph">[Land]</span></p>
         <h1 id="intro-title">Ruhige, ehrliche Videos, die <em>Lust aufs Produkt</em> machen.</h1>
@@ -188,13 +188,6 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
           <a class="btn btn-primary" href="#arbeiten">Meine Arbeiten ansehen</a>
           <a class="mail-link ph" href="#kontakt">[deine E-Mail-Adresse]</a>
         </div>
-      </div>
-      <div class="vid vid-hero" data-video="auto">
-        <video src="assets/video/video-01.mp4" poster="assets/img/video-01-cover.jpg" muted playsinline loop preload="auto" aria-label="Beauty-Video: Lippenstift im Tageslicht"></video>
-        <button class="vid-btn vid-sound" type="button" aria-pressed="false">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3l2.5-2.5-1-1-2.5 2.5-2.5-2.5-1 1 2.5 2.5-2.5 2.5 1 1 2.5-2.5 2.5 2.5 1-1z"/></svg>
-          <span>Ton an</span>
-        </button>
       </div>
     </div>
   </section>
@@ -359,7 +352,7 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
     var v = box.querySelector('video');
     if (box.dataset.video === 'auto') {
       var btn = box.querySelector('.vid-sound');
-      btn.addEventListener('click', function () {
+      if (btn) btn.addEventListener('click', function () {
         var on = v.muted;
         if (on) muteOthers(box);
         setSound(box, on);
