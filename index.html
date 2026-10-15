@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>[Dein Name] · UGC Creator</title>
+<title>Angelique Möltner · UGC Creator</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="[Platzhalter] UGC Creator für Beauty, Food, Home, Fashion und Tech. Ruhige, ehrliche Videos und Fotos für Marken.">
+<meta name="description" content="Angelique Möltner, UGC Creatorin seit 2022: ästhetische Videos und Fotos für Beauty, Wellbeing und Healthy Lifestyle. Für Paid Ads und Organic Content.">
 <style>
 /* Layout: phone-first single column; a wide landscape clip opens the page, text follows; work becomes a grid on wider screens. */
 :root {
@@ -110,7 +110,6 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
 /* Work */
 .work-grid { display: grid; gap: var(--gap); grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (min-width: 760px) { .work-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (min-width: 1100px) { .work-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .work-card { display: grid; gap: 0.6rem; min-width: 0; margin: 0; }
 .work-card figcaption { display: grid; gap: 0.1rem; }
 .work-card .label { font-weight: 500; }
@@ -129,7 +128,7 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
 
 /* About */
 .about { display: grid; gap: 2rem; align-items: center; }
-.about img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); max-width: 460px; }
+.about img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
 .about-text { display: grid; gap: 1rem; min-width: 0; max-width: var(--text); }
 .facts { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0; }
 .facts li { font-size: var(--step--1); background: var(--sand); border-radius: 999px; padding: 0.3rem 0.8rem; }
@@ -141,7 +140,7 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
 .service .price { font-variant-numeric: tabular-nums; color: var(--ink-soft); }
 
 /* Testimonials */
-.quotes { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.quotes { max-width: 760px; display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
 .quote { margin: 0; padding: 1.6rem; background: var(--sand); border-radius: var(--radius); display: grid; gap: 0.8rem; }
 .quote blockquote { margin: 0; font-family: var(--font-display); font-size: var(--step-1); line-height: 1.35; }
 .quote figcaption { font-size: var(--step--1); color: var(--ink-soft); }
@@ -157,6 +156,22 @@ em { font-family: var(--font-display); font-style: italic; color: var(--accent);
 .socials { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; list-style: none; padding: 0; margin: 0; }
 .socials a { display: inline-block; padding-block: 0.6rem; color: var(--accent-ink); }
 
+
+
+/* Partners marquee */
+.partners { padding-block: var(--section) 0; }
+.partners .eyebrow { font-family: var(--font-body); font-size: var(--step--1); margin-bottom: 1rem; }
+.marquee { display: flex; overflow: clip; border-block: 1px solid var(--line); padding-block: 1rem; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { display: flex; flex-shrink: 0; gap: 2.5rem; padding: 0 1.25rem; margin: 0; list-style: none; animation: marquee 50s linear infinite; }
+.marquee-track li { font-family: var(--font-display); font-size: var(--step-1); white-space: nowrap; color: var(--ink); }
+.marquee-track li::after { content: "✦"; margin-left: 2.5rem; color: var(--gold-deep); font-size: 0.7em; vertical-align: middle; }
+@keyframes marquee { to { translate: -100% 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { mask-image: none; -webkit-mask-image: none; }
+  .marquee-track { animation: none; flex-wrap: wrap; flex-shrink: 1; gap: 0.5rem 2.5rem; padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
+  .marquee-track[aria-hidden="true"] { display: none; }
+}
+.vid-45 { aspect-ratio: 4 / 5; }
 
 /* Stickers: decorative, always visible at rest; fly-in only moves them (never hides them) */
 main { overflow-x: clip; }
@@ -197,7 +212,8 @@ main { overflow-x: clip; }
 .section-head h2 .st-excl { position: absolute; left: 100%; top: -0.2em; --w: 0.7em; margin-left: 0.15em; }
 
 .about { position: relative; }
-.about-photo { position: relative; justify-self: center; max-width: 460px; width: 100%; }
+.about-photo { position: relative; justify-self: center; width: min(100%, 260px); }
+@media (min-width: 900px) { .about-photo { width: min(100%, 380px); } }
 .about-photo .st-clip { left: 12%; top: -26px; --w: 34px; --r: -8deg; }
 .about-photo .st-bow { right: -4px; bottom: -14px; --w: clamp(60px, 14vw, 88px); --r: 10deg; }
 
@@ -247,7 +263,7 @@ main { overflow-x: clip; }
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand ph" href="#start">[Dein Name]</a>
+    <a class="brand" href="#start">Angelique Möltner</a>
     <nav class="nav" aria-label="Hauptmenü">
       <a class="nav-link" href="#arbeiten">Arbeiten</a>
       <a class="nav-link" href="#ergebnisse">Ergebnisse</a>
@@ -270,25 +286,37 @@ main { overflow-x: clip; }
         <figure class="polaroid fly" style="--fx:-60px;--fy:30px;--d:.35s">
           <svg class="st st-flat tape" viewBox="0 0 200 40" aria-hidden="true"><use href="#s-tape"/></svg>
           <img src="assets/img/polaroid-kaffee.jpg" width="480" height="480" alt="Die Creatorin trinkt aus einer großen Keramiktasse">
-          <figcaption>erst Kaffee, dann Content</figcaption>
+          <figcaption>Content schafft Verbindung</figcaption>
         </figure>
         <svg class="st st-flat st-burst fly" style="--fx:30px;--fy:-30px;--d:.55s" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-burst"/></svg>
         <svg class="st st-stars fly" style="--fx:40px;--fy:40px;--d:.7s" viewBox="0 0 120 100" aria-hidden="true"><use href="#s-stars"/></svg>
       </div>
       <div class="intro-text">
-        <p class="eyebrow">UGC Creator aus <span class="ph">[Land]</span></p>
+        <p class="eyebrow">Content Creator · UGC · seit 2022</p>
         <h1 id="intro-title">Ruhige, ehrliche Videos, die <em>Lust aufs Produkt<svg class="st st-flat st-underline" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><use href="#s-underline"/></svg></em> machen.</h1>
-        <p class="lead ph">[Platzhalter: 1–2 Sätze über dich und was Marken bei dir bekommen. Schreiben wir im nächsten Schritt zusammen.]</p>
+        <p class="lead">Hey, ich bin Angelique. Ich bin überzeugt: Content ist mehr als Werbung. Content schafft Verbindung, und genau die bringe ich in jedes Projekt ein.</p>
         <ul class="niches" aria-label="Themen">
-          <li>Beauty</li><li>Food</li><li>Home</li><li>Fashion</li><li>Tech</li>
+          <li>Beauty</li><li>Wellbeing</li><li>Healthy Lifestyle</li><li>Hair</li><li>Food</li><li>Home</li><li>Fashion</li><li>Tech</li>
         </ul>
         <div class="intro-actions">
           <span class="cta-wrap"><a class="btn btn-primary" href="#arbeiten">Meine Arbeiten ansehen</a>
             <svg class="st st-flat st-arrow" viewBox="0 0 120 70" aria-hidden="true" style="--r:-100deg"><use href="#s-arrow"/></svg>
             <span class="st-note" aria-hidden="true">schau mal rein!</span></span>
-          <a class="mail-link ph" href="#kontakt">[deine E-Mail-Adresse]</a>
+          <a class="mail-link" href="mailto:kontakt@soulundbrand.com">kontakt@soulundbrand.com</a>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- Partners -->
+  <section class="partners" aria-labelledby="partners-title">
+    <div class="wrap">
+      <h2 id="partners-title" class="eyebrow">Marken, für die ich produziert habe</h2>
+    </div>
+    <div class="marquee">
+      <ul class="marquee-track"><li>Always</li><li>Schwarzkopf</li><li>Pampers</li><li>Clarins</li><li>Outfittery</li><li>Cocunat</li><li>mymuesli</li><li>SOS</li><li>Shyne</li><li>Pomelo</li><li>Biences</li><li>Majaskin</li><li>Annemarie Börlind</li><li>Haka</li><li>Cloudpillo</li><li>Superum</li><li>Rosental</li><li>Skin + Me</li></ul>
+      <ul class="marquee-track" aria-hidden="true"><li>Always</li><li>Schwarzkopf</li><li>Pampers</li><li>Clarins</li><li>Outfittery</li><li>Cocunat</li><li>mymuesli</li><li>SOS</li><li>Shyne</li><li>Pomelo</li><li>Biences</li><li>Majaskin</li><li>Annemarie Börlind</li><li>Haka</li><li>Cloudpillo</li><li>Superum</li><li>Rosental</li><li>Skin + Me</li></ul>
     </div>
   </section>
 
@@ -298,48 +326,144 @@ main { overflow-x: clip; }
       <div class="section-head">
         <p class="eyebrow">Arbeiten</p>
         <h2 id="work-title">Videos<svg class="st st-flat st-excl fly-scroll" style="--fy:-30px" viewBox="0 0 40 100" aria-hidden="true"><use href="#s-excl"/></svg></h2>
-        <p class="lead">Hook Ads, Unboxings, Produkt-Demos und Testimonials im Hochformat.</p>
+        <p class="lead">Ausgewählte Kooperationen aus Beauty, Wellbeing und Lifestyle. Tippe auf ein Video, um es abzuspielen.</p>
       </div>
       <div class="work-grid">
         <figure class="work-card">
-          <div class="vid" data-video="tap">
-            <video src="assets/video/video-01.mp4" poster="assets/img/video-01-cover.jpg" playsinline preload="none" aria-label="Produkt-Demo: Lippenstift"></video>
+          <div class="vid vid-45" data-video="tap">
+            <video src="assets/video/koop-biences.mp4" poster="assets/img/koop-biences-cover.jpg" playsinline muted preload="none" aria-label="Kooperation mit Biences"></video>
             <div class="vid-surface" aria-hidden="true"></div>
             <svg class="st st-cursor fly-scroll" style="--fx:30px;--fy:30px" viewBox="0 0 80 90" aria-hidden="true"><use href="#s-cursor"/></svg>
-            <button class="vid-btn vid-play" type="button" aria-label="Video abspielen">
+            <button class="vid-btn vid-play" type="button" aria-label="Video Biences abspielen">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
             </button>
           </div>
           <figcaption>
-            <span class="label">Produkt-Demo · Beauty</span>
-            <span class="meta">Lippenstift · 9:16 · 0:14 · <span class="ph">[Marke oder „Spec“]</span></span>
+            <span class="label">Biences</span>
+            <span class="meta">Kooperation · Beauty · 0:31</span>
           </figcaption>
         </figure>
         <figure class="work-card">
-          <div class="vid ph vid-empty"><span class="ph-note">Platzhalter</span><span>[Video 2]</span></div>
-          <figcaption><span class="label ph">[Art des Videos · Nische]</span></figcaption>
+          <div class="vid vid-45" data-video="tap">
+            <video src="assets/video/koop-majaskin.mp4" poster="assets/img/koop-majaskin-cover.jpg" playsinline muted preload="none" aria-label="Kooperation mit Majaskin"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Majaskin abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Majaskin</span>
+            <span class="meta">Kooperation · Skincare · 0:38</span>
+          </figcaption>
         </figure>
         <figure class="work-card">
-          <div class="vid ph vid-empty"><span class="ph-note">Platzhalter</span><span>[Video 3]</span></div>
-          <figcaption><span class="label ph">[Art des Videos · Nische]</span></figcaption>
+          <div class="vid vid-45" data-video="tap">
+            <video src="assets/video/koop-cloudpillo.mp4" poster="assets/img/koop-cloudpillo-cover.jpg" playsinline muted preload="none" aria-label="Kooperation mit Cloudpillo"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Cloudpillo abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Cloudpillo</span>
+            <span class="meta">Kooperation · Sleep & Home · 0:20</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid vid-45" data-video="tap">
+            <video src="assets/video/koop-annemarie-boerlind.mp4" poster="assets/img/koop-annemarie-boerlind-cover.jpg" playsinline muted preload="none" aria-label="Kooperation mit Annemarie Börlind"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Annemarie Börlind abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Annemarie Börlind</span>
+            <span class="meta">Kooperation · Beauty · 0:10</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid vid-45" data-video="tap">
+            <video src="assets/video/koop-haka.mp4" poster="assets/img/koop-haka-cover.jpg" playsinline muted preload="none" aria-label="Kooperation mit Haka"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Haka abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Haka</span>
+            <span class="meta">Kooperation · Home · 0:16</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid vid-45" data-video="tap">
+            <video src="assets/video/koop-superum.mp4" poster="assets/img/koop-superum-cover.jpg" playsinline muted preload="none" aria-label="Kooperation mit Superum"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Superum abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Superum</span>
+            <span class="meta">Kooperation · Wellbeing · 0:15</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid vid-45" data-video="tap">
+            <video src="assets/video/koop-rosental.mp4" poster="assets/img/koop-rosental-cover.jpg" playsinline muted preload="none" aria-label="Kooperation mit Rosental"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Rosental abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Rosental</span>
+            <span class="meta">Kooperation · Skincare · 0:10</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid vid-45" data-video="tap">
+            <video src="assets/video/koop-skin-and-me.mp4" poster="assets/img/koop-skin-and-me-cover.jpg" playsinline muted preload="none" aria-label="Kooperation mit Skin + Me"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Skin + Me abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Skin + Me</span>
+            <span class="meta">Kooperation · Skincare · 0:05</span>
+          </figcaption>
+        </figure>
+        <figure class="work-card">
+          <div class="vid vid-45" data-video="tap">
+            <video src="assets/video/video-01.mp4" poster="assets/img/video-01-cover.jpg" playsinline preload="none" aria-label="Produkt-Demo: Lipgloss"></video>
+            <div class="vid-surface" aria-hidden="true"></div>
+            <button class="vid-btn vid-play" type="button" aria-label="Video Lipgloss abspielen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <figcaption>
+            <span class="label">Lipgloss</span>
+            <span class="meta">Produkt-Demo · Beauty · 0:14 · mit Ton</span>
+          </figcaption>
         </figure>
       </div>
 
       <div class="section-head photo-head">
         <h2>Fotos <svg class="st st-flat st-heart" viewBox="0 0 100 90" aria-hidden="true"><use href="#s-heart-line"/></svg></h2>
-        <p class="lead">Produktfotos mit natürlichem Licht, warmen Materialien und viel Ruhe im Bild.</p>
+        <p class="lead">Fotocontent mit natürlichem Licht, warmen Materialien und viel Ruhe im Bild.</p>
       </div>
       <div class="photo-grid">
+        <img src="assets/img/fotos-collage-1.jpg" width="720" height="900" loading="lazy" alt="Fotocollage: Kapseln in der Hand, Tee mit Zitronen, Gläser mit Schmuck, Angelique mit Handy">
+        <img src="assets/img/fotos-collage-2.jpg" width="720" height="900" loading="lazy" alt="Fotocollage: Creme auf der Hand, Tasche mit Sonnenbrille, Outfit draußen, Kakaopulver">
         <div class="tape-on"><svg class="st st-flat fly-scroll" style="--fy:-40px;--r:-4deg" viewBox="0 0 200 40" aria-hidden="true"><use href="#s-tape-red"/></svg>
         <img src="assets/img/foto-01.jpg" width="720" height="900" loading="lazy" alt="Creatorin hält zwei türkise Body-Gel-Tuben ans Gesicht, sonniges Wohnzimmer"></div>
         <div class="tape-on"><svg class="st st-flat fly-scroll" style="--fy:-40px;--r:3deg" viewBox="0 0 200 40" aria-hidden="true"><use href="#s-tape"/></svg>
         <img src="assets/img/foto-07.jpg" width="720" height="900" loading="lazy" alt="Hände mit Pipette über einem Serum-Fläschchen, Rattan-Tablett mit Kerzen"></div>
-        <img src="assets/img/foto-03.jpg" width="720" height="900" loading="lazy" alt="Gerilltes Glas mit Orangendrink vor Trockenblumen im Sonnenlicht">
         <img src="assets/img/foto-08.jpg" width="720" height="900" loading="lazy" alt="Creatorin im Waffel-Bademantel setzt eine Tuchmaske auf">
         <img src="assets/img/foto-04.jpg" width="720" height="900" loading="lazy" alt="Iced Latte in der Hand, von oben, mit Rattan-Tablett und Kerzen">
         <img src="assets/img/foto-16.jpg" width="720" height="900" loading="lazy" alt="Tasse Tee mit Blüten, umgeben von Grapefruit-Scheiben">
         <img src="assets/img/foto-17.jpg" width="720" height="900" loading="lazy" alt="Joghurt-Schale mit Blaubeeren und Mandarinen neben einer Dose Proteinpulver">
-        <img src="assets/img/foto-02.jpg" width="720" height="900" loading="lazy" alt="Trockenblumen und goldene Ohrringe im Schattenspiel">
       </div>
     </div>
   </section>
@@ -364,18 +488,21 @@ main { overflow-x: clip; }
   <section class="section" id="ueber-mich" aria-labelledby="about-title">
     <div class="wrap about">
       <div class="about-photo">
-        <img src="assets/img/ueber-mich.jpg" width="800" height="1000" loading="lazy" alt="Die Creatorin mit Kaffeetasse am sonnigen Fenster">
+        <img src="assets/img/ueber-mich.jpg" width="800" height="1000" loading="lazy" alt="Angelique lächelnd am sonnigen Fenster">
         <svg class="st st-clip fly-scroll" style="--fy:-50px" viewBox="0 0 40 110" aria-hidden="true"><use href="#s-clip"/></svg>
         <svg class="st st-bow fly-scroll" style="--fx:50px;--fy:30px" viewBox="0 0 120 100" aria-hidden="true"><use href="#s-bow"/></svg>
       </div>
       <div class="about-text">
         <p class="eyebrow">Über mich</p>
-        <h2 id="about-title">Hi, ich bin <span class="ph">[Name]</span></h2>
-        <p class="ph">[Platzhalter: ein kurzer, persönlicher Absatz über dich, deinen Stil und warum Marken gern mit dir arbeiten.]</p>
+        <h2 id="about-title">Hi, ich bin Angelique</h2>
+        <p>Ich arbeite seit fast drei Jahren als UGC-Creatorin und habe bereits für Marken wie Always, Schwarzkopf, Pampers, Outfittery und Pomelo produziert.</p>
+        <p>Mein Fokus: ästhetische Bildsprache, klare Botschaften und authentisches Storytelling, das nicht nur Aufmerksamkeit gewinnt, sondern Ergebnisse liefert. Egal ob für Paid Ads oder Organic Content.</p>
+        <p>Mit meiner ruhigen, einfühlsamen Art entwickle ich Videos, die nicht laut schreien, sondern berühren, Vertrauen schaffen und im Kopf bleiben. Besonders im Beauty- und Health-Bereich setze ich auf echte Geschichten, die Zielgruppen abholen und Kaufentscheidungen positiv beeinflussen.</p>
         <ul class="facts">
+          <li>UGC seit 2022</li>
+          <li>Paid Ads &amp; Organic</li>
+          <li>Beauty &amp; Health</li>
           <li class="ph">[Standort]</li>
-          <li class="ph">[Sprachen]</li>
-          <li>Arbeitet regelmäßig mit Marken</li>
         </ul>
       </div>
     </div>
@@ -404,8 +531,7 @@ main { overflow-x: clip; }
         <h2 id="quotes-title">Was Marken sagen</h2>
       </div>
       <div class="quotes">
-        <figure class="quote ph"><blockquote>[Echtes Zitat einer Marke]</blockquote><figcaption>[Name, Marke]</figcaption></figure>
-        <figure class="quote ph"><blockquote>[Echtes Zitat einer Marke]</blockquote><figcaption>[Name, Marke]</figcaption></figure>
+        <figure class="quote"><blockquote>„Zu sagen, dass wir begeistert sind, wäre untertrieben. Wirklich großartige Arbeit, Kompliment! Wir haben keinerlei Änderungswünsche und freuen uns schon jetzt auf eine zukünftige Zusammenarbeit.“</blockquote><figcaption>Pampers</figcaption></figure>
       </div>
     </div>
   </section>
@@ -418,10 +544,9 @@ main { overflow-x: clip; }
       <p class="eyebrow">Kontakt</p>
       <h2 id="contact-title">Lass uns zusammen etwas Schönes machen.</h2>
       <p>Schreib mir kurz, worum es geht: Produkt, Anzahl Videos und Zeitraum.</p>
-      <a class="mail ph" href="#kontakt">[deine E-Mail-Adresse]</a>
+      <a class="mail" href="mailto:kontakt@soulundbrand.com">kontakt@soulundbrand.com</a>
       <ul class="socials">
-        <li><a class="ph" href="#kontakt">[Instagram]</a></li>
-        <li><a class="ph" href="#kontakt">[TikTok]</a></li>
+        <li><a href="https://www.instagram.com/ugc.angelique/" target="_blank" rel="noopener">Instagram @ugc.angelique</a></li>
       </ul>
     </div>
   </section>
@@ -429,7 +554,7 @@ main { overflow-x: clip; }
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© 2026 <span class="ph">[Dein Name]</span></span>
+    <span>© 2026 Angelique Möltner</span>
     <span class="ph">[Impressum · Datenschutz]</span>
   </div>
 </footer>
