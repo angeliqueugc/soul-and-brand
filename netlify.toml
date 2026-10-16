@@ -1,4 +1,4 @@
 # Netlify publishes only the website files (no CLAUDE.md, originals or notes).
 [build]
-  command = "rm -rf public && mkdir public && cp -r index.html assets _redirects public/"
+  command = "rm -rf public && mkdir public && cp -r index.html impressum.html datenschutz.html assets _redirects public/"
   publish = "public"

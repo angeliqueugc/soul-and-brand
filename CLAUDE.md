@@ -188,6 +188,8 @@ Fill this in during the build and keep it up to date. Use it in every conversati
   - Services (no prices): UGC-Kooperation, Content Creation & Brandface (organic), Editing (bookable separately), Social Media Management.
   - Testimonials (all real, from the Canva portfolio): Pampers, GREY Berlin Skincare, an unnamed client ("Kundenfeedback"), Vicki. GREY Berlin added to partners.
   - About photo kept small (user: was too big).
-  - Still open: more videos via Google Drive (optional), location/country, Impressum + Datenschutz.
+  - Legal: impressum.html + datenschutz.html (linked in footer). Address via business-address service: Angelique Möltner, c/o flexdienst – #11937, Kurt-Schumacher-Straße 74, 67663 Kaiserslautern. Datenschutz covers Netlify hosting, email contact, Instagram link, no cookies/tracking, self-hosted fonts. Told the user Claude is not a lawyer.
+  - Go-live (phone only): Netlify connected to the GitHub repo; netlify.toml copies only index.html, impressum.html, datenschutz.html, assets, _redirects into public/. Every push to main updates the live site automatically.
+  - Still open: more videos via Google Drive (optional). og:image is relative until the live address is known; make it absolute after launch.
   - Preview link for the user: https://claude.ai/artifact/WhZrzv4tTfHQYHM822teco (private Claude artifact). After each change, rebuild the preview copy from index.html (strip doctype/html/head/body, keep assets as files) and republish to this same URL.
   - Phone-only setup (no laptop): the site is built in a Claude Code cloud session and stored in the GitHub repo `angeliqueugc/soul-and-brand`, because the cloud container is temporary. Every save point is pushed to GitHub. Photos come via the chat, videos via Google Drive. Previews are shared as links the user opens on their phone. Mac/Desktop/Finder steps in these rules don't apply; going live and updates are done from the phone (e.g. Netlify connected to the GitHub repo).
