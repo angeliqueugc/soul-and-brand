@@ -162,7 +162,7 @@ The first launch happens once, in the setup prompt. These rules are for every up
 Fill this in during the build and keep it up to date. Use it in every conversation.
 
 - Name: Angelique Möltner (brand: Soul & Brand)
-- Country:
+- Country: Deutschland
 - Chat language: Deutsch
 - Website language: Deutsch
 - Niche: Beauty, Fashion, Food, Home, Tech (broad lifestyle creator)
